@@ -34,6 +34,7 @@ import com.vaadin.event.LayoutEvents.LayoutClickNotifier;
 import com.vaadin.shared.Connector;
 import com.vaadin.shared.EventId;
 import com.vaadin.shared.MouseEventDetails;
+import com.vaadin.shared.Registration;
 import com.vaadin.ui.AbstractLayout;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.ComponentContainer;
@@ -220,26 +221,25 @@ public class FancyCssLayout extends AbstractLayout implements
     }
 
     @Override
-    public void addLayoutClickListener(LayoutClickListener listener) {
-        addListener(EventId.LAYOUT_CLICK_EVENT_IDENTIFIER,
+    public Registration addLayoutClickListener(LayoutClickListener listener) {
+        return addListener(EventId.LAYOUT_CLICK_EVENT_IDENTIFIER,
                 LayoutClickEvent.class, listener,
                 LayoutClickListener.clickMethod);
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public void removeLayoutClickListener(LayoutClickListener listener) {
         removeListener(EventId.LAYOUT_CLICK_EVENT_IDENTIFIER,
                 LayoutClickEvent.class, listener);
     }
 
-    @Override
     @Deprecated
     public void addListener(LayoutClickListener listener) {
         addLayoutClickListener(listener);
 
     }
 
-    @Override
     @Deprecated
     public void removeListener(LayoutClickListener listener) {
         removeLayoutClickListener(listener);
