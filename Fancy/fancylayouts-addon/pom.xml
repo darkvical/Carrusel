@@ -31,7 +31,7 @@
 
         <!-- May be overridden by the build system -->
         <license.short.name>apache2</license.short.name>
-        <vaadin.version>8.10.4</vaadin.version>
+        <vaadin.version>8.13.0</vaadin.version>
         <vaadin.plugin.version>8.10.4</vaadin.plugin.version>
 
         <snapshot.repository.url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/
